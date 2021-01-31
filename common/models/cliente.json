@@ -1,0 +1,48 @@
+{
+    "name": "cliente",
+    "base": "PersistedModel",
+    "idInjection": true,
+    "options": {
+        "validateUpsert": true
+    },
+    "properties": {
+        "chr_cliecodigo": {
+            "type": "string",
+            "id": true
+        },
+        "vch_cliepaterno": {
+            "type": "string"
+        },
+        "vch_cliematerno": {
+            "type": "string"
+        },
+        "vch_clienombre": {
+            "type": "string"
+        },
+        "chr_cliedni": {
+            "type": "string"
+        },
+        "vch_clieciudad": {
+            "type": "string"
+        },
+        "vch_cliedireccion": {
+            "type": "string"
+        },
+        "vch_clietelefono": {
+            "type": "string"
+        },
+        "vch_clieusuario": {
+            "type": "string"
+        },
+        "vch_clieclave": {
+            "type": "string"
+        },
+        "vch_clieestado": {
+            "type": "string"
+        }
+    },
+    "validations": [],
+    "relations": {},
+    "acls": [],
+    "methods": {}
+}
