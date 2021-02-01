@@ -5,6 +5,14 @@
     "options": {
         "validateUpsert": true
     },
+    "mixins": {
+        "Locals": {},
+        "DisableMethods": {
+            "expose": [
+                "signin"
+            ]
+        }
+    },
     "properties": {
         "chr_cliecodigo": {
             "type": "string",

@@ -1,5 +1,7 @@
 'use strict';
 
 module.exports = function(Cliente) {
-    require("./cliente/")(Cliente);
+
+    require("./remote-methods/")(Cliente);
+
 };

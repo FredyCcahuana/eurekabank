@@ -1,11 +1,11 @@
 {
-    "eurekabank": {
+    "mydb": {
         "host": "us-cdbr-east-02.cleardb.com",
         "port": 3306,
         "url": "",
         "database": "heroku_a50594a96db7083",
         "password": "40e02acf",
-        "name": "eurekabank",
+        "name": "mydb",
         "user": "b238b0054a1207",
         "connector": "mysql"
     }

@@ -1,10 +1,6 @@
 'use strict';
 
-module.exports = function (Bank) {
+module.exports = function(Cliente) {
 
-  require("./createBank")(Bank);
-  require("./updateBank")(Bank);
-  //require("./uploadPicture")(Category);
-  require('./getBank')(Bank);
-  //require("./updatePicture")(Category);
+    require("./signin")(Cliente);
 };
