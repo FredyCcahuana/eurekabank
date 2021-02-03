@@ -11,18 +11,17 @@
     "posttest": "npm run lint"
   },
   "dependencies": {
-    "@hapi/joi": "^17.1.1",
     "compression": "^1.0.3",
     "cors": "^2.5.2",
     "helmet": "^3.10.0",
-    "joi": "^17.3.0",
+    "joi": "^14.3.1",
     "loopback": "^3.22.0",
     "loopback-boot": "^2.6.5",
     "loopback-component-explorer": "^6.2.0",
     "loopback-connector-mongodb": "^5.5.0",
     "loopback-connector-mysql": "^6.0.0",
     "serve-favicon": "^2.0.1",
-    "strong-error-handler": "^4.0.0"
+    "strong-error-handler": "^2.0.0"
   },
   "devDependencies": {
     "eslint": "^3.17.1",

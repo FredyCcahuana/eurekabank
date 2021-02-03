@@ -12,14 +12,16 @@ module.exports = {
 
   get() {
     return {
-
       async save(file, folder, name) {
         return new Promise(async (resolve, reject) => {
           if (!file) return resolve();
+
           let filename = (name || uuid.v1()) + path.extname(file.name);
           let relativePath = folder ? folder + '/' + filename : filename;
+
           fs.copy(file.path, path.join(root, relativePath), (err) => {
             if (err) return reject(err);
+
             return resolve(relativePath);
           });
         });
@@ -71,10 +73,13 @@ module.exports = {
       async replace(file, relativePath) {
         return new Promise(async (resolve, reject) => {
           if (!file || !relativePath) return resolve();
+
           let newRelativePath = relativePath.split('.').shift() + path.extname(file.name);
+
           fs.copy(file.path, path.join(root, newRelativePath), (err) => {
             if (err) return reject(err);
             if (relativePath != newRelativePath) fs.unlink(path.join(root, relativePath));
+
             return resolve(newRelativePath);
           });
         });
@@ -122,6 +127,7 @@ module.exports = {
           }
         });
       },
+
       async delete(relativePath) {
         return new Promise(async (resolve, reject) => {
           if (!relativePath) return resolve();
@@ -132,7 +138,9 @@ module.exports = {
             resolve();
           });
         });
-      }
+      },
+
+
     }
   },
 

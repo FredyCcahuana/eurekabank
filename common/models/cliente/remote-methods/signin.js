@@ -7,6 +7,7 @@ module.exports = function(Cliente) {
 
     const METHOD_NAME = 'signin';
     remoteMethodResponse.setResponseType(Cliente, METHOD_NAME, signinSchema);
+    
     Cliente.beforeRemote(METHOD_NAME, async(ctx, unused) => {
         let payload = ctx.args.payload;
 
@@ -36,12 +37,14 @@ module.exports = function(Cliente) {
 
     Cliente.remoteMethod(METHOD_NAME, {
         description: 'Login del usuario del panel web',
-        accepts: [{
+        accepts: [
+            {
             arg: 'payload',
-            type: 'object',
-            //http: ctx => ctx.args ? ctx.args.locals : undefined,
-            //required: true,
-        }],
+            type: METHOD_NAME,
+            http: {
+              source: 'body'
+            }
+          }],
         returns: {
             arg: 'response',
             any: 'cliente',

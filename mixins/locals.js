@@ -19,7 +19,7 @@ module.exports = function (Model, options) {
         roles = (await user.roles()).map(role => role.name);
       }
     }
-    console.log('usuario autorizado');
+
     ctx.args.locals = user ? {
       accessToken,
       user,

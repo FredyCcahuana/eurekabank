@@ -1,5 +1,6 @@
 /* eslint-disable strict */
-const joi = require('joi')
+const joi = require('joi');
+
 const _format = (schema) => {
   if (schema.type == 'object') {
     let result = {};

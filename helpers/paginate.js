@@ -1,7 +1,7 @@
 const Errors = require('http-errors');
 const serializeQuery = require('./serializeQuery');
 
-const paginate = async (Model, options, page, perPage = 20, order = 'operationDate DESC', include = [], where = {}, req, method = 'paginate') => {
+const paginate = async (Model, options, page, perPage = 20, order = 'created DESC', include = [], where = {}, req, method = 'paginate') => {
   try {
     if (include && !Array.isArray(include)) throw Errors.BadRequest('include is not an array');
 
@@ -53,20 +53,6 @@ const paginate = async (Model, options, page, perPage = 20, order = 'operationDa
           lte: req.query[key]
         };
         findLogic.where.and.push(obj);
-      } else if (key == 'rangoMinAmountTotal') {
-        if (!findLogic.where.and) findLogic.where.and = [];
-        let obj = {};
-        obj[options[key]] = {
-          gte: req.query[key]
-        };
-        findLogic.where.and.push(obj);
-      } else if (key == 'rangoMaxAmountTotal') {
-        if (!findLogic.where.and) findLogic.where.and = [];
-        let obj = {};
-        obj[options[key]] = {
-          lte: req.query[key]
-        };
-        findLogic.where.and.push(obj);
       } else {
         findLogic.where[key] = req.query[key];
       }
@@ -74,6 +60,7 @@ const paginate = async (Model, options, page, perPage = 20, order = 'operationDa
     }
 
     let list = await Model.find(findLogic);
+  
     let count = await Model.count(findLogic.where);
 
     if (!page) return Promise.resolve({
