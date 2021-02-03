@@ -22,7 +22,6 @@ module.exports = function(Cliente) {
     Cliente[METHOD_NAME] = async(payload) => {
         //payload.username = "gcoronelc@gmail.com";
         //const Role = Cliente.app.models.role;
-        //const RoleMapping = Cliente.app.models.roleMapping; 
         let cliente = await Cliente.findOne({
             where: {
                 vch_clieusuario: payload.username,
