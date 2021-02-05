@@ -1,0 +1,53 @@
+{
+  "name": "movimiento",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "Locals": {},
+    "DisableMethods": {
+      "expose": [
+        "listLast"
+      ]
+    }
+  },
+  "properties": {
+    "chr_cuencodigo": {
+      "type": "string"
+    },
+    "int_movinumero": {
+      "type": "number",
+      "id": true
+    },
+    "dtt_movifecha": {
+      "type": "date"
+    },
+    "chr_emplcodigo": {
+      "type": "string"
+    },
+    "chr_cliecodigo": {
+      "type": "string"
+    },
+    "chr_tipocodigo": {
+      "type": "string"
+    },
+    "dec_moviimporte": {
+      "type": "number"
+    },
+    "chr_cuenreferencia": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "tipoMovimiento": {
+      "type": "belongsTo",
+      "model": "tipoMovimiento",
+      "foreignKey": "chr_tipocodigo"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

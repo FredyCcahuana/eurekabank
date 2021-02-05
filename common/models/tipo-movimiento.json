@@ -1,0 +1,44 @@
+{
+  "name": "tipoMovimiento",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "Locals": {},
+    "DisableMethods": {
+      "expose": [
+      ]
+    }
+  },
+  "properties": {
+    "chr_tipocodigo": {
+      "type": "string",
+      "id": 1,
+      "mysql": {
+        "dataType": "char",
+        "dataLength": 3
+      }
+    },
+    "vch_tipodescripcion": {
+      "type": "string"
+    },
+    "vch_tipoaccion": {
+      "type": "string"
+    },
+    "vch_tipoestado": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "movimiento": {
+      "type": "hasMany",
+      "model": "movimiento",
+      "foreignKey": "chr_tipocodigo"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

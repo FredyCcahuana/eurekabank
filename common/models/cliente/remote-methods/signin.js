@@ -1,6 +1,6 @@
 const Errors = require('http-errors');
 const joi = require('joi');
-const signinSchema = require('../schemas/signin');
+const signinSchema = require('../../movimiento/schemas/signin');
 const remoteMethodResponse = require('../../../../helpers/remoteMethodResponse');
 
 module.exports = function(Cliente) {
