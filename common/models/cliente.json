@@ -50,7 +50,13 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "cuenta": {
+      "type": "hasMany",
+      "model": "cuenta",
+      "foreignKey": "chr_cliecodigo"
+    }
+  },
   "acls": [],
   "methods": {}
 }

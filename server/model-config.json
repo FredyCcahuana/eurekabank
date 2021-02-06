@@ -25,5 +25,9 @@
   "tipoMovimiento": {
     "dataSource": "mydb",
     "public": true
+  },
+  "cuenta": {
+    "dataSource": "mydb",
+    "public": true
   }
 }

@@ -1,5 +1,5 @@
 {
-  "name": "movimiento",
+  "name": "cuenta",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
@@ -9,47 +9,54 @@
     "Locals": {},
     "DisableMethods": {
       "expose": [
-        "listLast"
+        "list",
+        "listMovement"
       ]
     }
   },
   "properties": {
     "chr_cuencodigo": {
+      "type": "string",
+      "id":true
+    },
+    "chr_monecodigo": {
       "type": "string"
     },
-    "int_movinumero": {
-      "type": "number",
-      "id": true
+    "chr_sucucodigo": {
+      "type": "string"
     },
-    "dtt_movifecha": {
-      "type": "date"
-    },
-    "chr_emplcodigo": {
+    "chr_emplcreacuenta": {
       "type": "string"
     },
     "chr_cliecodigo": {
       "type": "string"
     },
-    "chr_tipocodigo": {
-      "type": "string"
-    },
-    "dec_moviimporte": {
+    "dec_cuensaldo": {
       "type": "number"
     },
-    "chr_cuenreferencia": {
+    "dtt_cuenfechacreacion": {
+      "type": "date"
+    },
+    "vch_cuenestado": {
+      "type": "string"
+    },
+    "int_cuencontmov": {
+      "type": "number"
+    },
+    "chr_cuenclave": {
       "type": "string"
     }
   },
   "validations": [],
   "relations": {
-    "tipoMovimiento": {
+    "cliente": {
       "type": "belongsTo",
-      "model": "tipoMovimiento",
-      "foreignKey": "chr_tipocodigo"
+      "model": "cliente",
+      "foreignKey": "chr_cliecodigo"
     },
-    "cuenta": {
-      "type": "belongsTo",
-      "model": "cuenta",
+    "movimiento": {
+      "type": "hasMany",
+      "model": "movimiento",
       "foreignKey": "chr_cuencodigo"
     }
   },

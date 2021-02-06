@@ -8,8 +8,7 @@
   "mixins": {
     "Locals": {},
     "DisableMethods": {
-      "expose": [
-      ]
+      "expose": []
     }
   },
   "properties": {
