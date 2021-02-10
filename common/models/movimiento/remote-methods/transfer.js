@@ -1,6 +1,6 @@
 const Errors = require('http-errors');
 const joi = require('joi');
-const createMedicineBriefcaseSchema = require('../schemas/create');
+const createMedicineBriefcaseSchema = require('../schemas/transfer');
 const remoteMethodResponse = require('../../../../helpers/remoteMethodResponse');
 
 module.exports = function (MedicineBriefcase) {

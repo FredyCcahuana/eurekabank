@@ -1,3 +1,11 @@
 {
-  "extends": "loopback"
+  "parserOptions": {
+    "ecmaVersion": 9
+  },
+  "extends": "loopback",
+  "rules": {
+    "strict": "off",
+    "space-before-function-paren": "off",
+    "comma-dangle": "off"
+  }
 }

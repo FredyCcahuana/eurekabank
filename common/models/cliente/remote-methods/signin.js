@@ -10,7 +10,7 @@ module.exports = function(Cliente) {
     
     Cliente.beforeRemote(METHOD_NAME, async(ctx, unused) => {
         let payload = ctx.args.payload;
-
+        console.log(payload);
         let result = joi.validate(payload, signinSchema, {
             stripUnknown: true
         });
@@ -22,6 +22,7 @@ module.exports = function(Cliente) {
     Cliente[METHOD_NAME] = async(payload) => {
         //payload.username = "gcoronelc@gmail.com";
         //const Role = Cliente.app.models.role;
+        console.log(payload);
         let cliente = await Cliente.findOne({
             where: {
                 vch_clieusuario: payload.username,
@@ -35,9 +36,8 @@ module.exports = function(Cliente) {
     };
 
     Cliente.remoteMethod(METHOD_NAME, {
-        description: 'Login del usuario del panel movil',
-        accepts: [
-            {
+        description: 'iniciar Usuario',
+        accepts: [{
             arg: 'payload',
             type: METHOD_NAME,
             http: {
@@ -50,7 +50,7 @@ module.exports = function(Cliente) {
             root: true,
         },
         http: {
-            verb: 'get',
+            verb: 'post',
             path: '/signin'
         }
     });

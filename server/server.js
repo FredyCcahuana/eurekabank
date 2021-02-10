@@ -4,7 +4,8 @@
 // License text available at https://opensource.org/licenses/MIT
 
 'use strict';
-
+require('dotenv').config();
+console.log('NODE_ENV=', process.env.NODE_ENV);
 const loopback = require('loopback');
 const boot = require('loopback-boot');
 var cors = require('cors');
