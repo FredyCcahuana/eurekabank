@@ -6,8 +6,12 @@ module.exports = (Cuenta) => {
     });
     console.log(cuenta);
     if (!cuenta) throw Errors.NotFound('Cuenta not found');
-
-    return cuenta;
+    let cuentaParse = [];
+    for(let i = 0;i<cuenta.length;i++){
+      cuenta[i].dec_moviimporte = new String(cuenta[i].dec_moviimporte);
+      cuentaParse.push(cuenta[i])
+    }
+    return cuentaParse;
   };
 
   Cuenta.remoteMethod('list', {
